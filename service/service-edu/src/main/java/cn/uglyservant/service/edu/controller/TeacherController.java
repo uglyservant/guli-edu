@@ -5,8 +5,8 @@ package cn.uglyservant.service.edu.controller;
 import cn.uglyservant.common.global.R;
 import cn.uglyservant.common.global.exception.GuliException;
 import cn.uglyservant.common.service.dto.TeacherQuery;
-import cn.uglyservant.common.service.vo.PageObject;
-import cn.uglyservant.common.service.vo.SingleMap;
+import cn.uglyservant.common.service.vo.Paged;
+import cn.uglyservant.common.global.V;
 import cn.uglyservant.service.edu.entity.Teacher;
 import cn.uglyservant.service.edu.service.TeacherService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -55,13 +55,13 @@ public class TeacherController {
         // queryWrapper.orderByAsc("sort").orderByAsc("level");
         Page<Teacher> teacherPage = teacherService.page(new Page<>(page, size), queryWrapper);
 
-        return R.ok(new PageObject(teacherPage.getTotal(), teacherPage.getRecords()));
+        return R.ok(new Paged(teacherPage.getTotal(), teacherPage.getRecords()));
     }
 
     @ApiOperation("查询一个讲师")
     @GetMapping("/find-by-id/{id}")
     public R findById(@PathVariable String id) {
-        return R.ok(new SingleMap("teacher", teacherService.getById(id)));
+        return R.ok(new V("teacher", teacherService.getById(id)));
     }
 
     @ApiOperation("删除一个讲师")

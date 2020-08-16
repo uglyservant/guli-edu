@@ -19,11 +19,10 @@ import lombok.experimental.Accessors;
  * @author uglyservant
  * @since 2020-06-06
  */
-@ApiModel("讲师")
-@TableName("edu_teacher")
 @Data
-@Accessors(chain = true)
+@TableName("edu_teacher")
 @EqualsAndHashCode(callSuper = false)
+@ApiModel(value = "Teacher对象", description = "讲师信息")
 public class Teacher implements Serializable {
 
     private static final long serialVersionUID = 1L;

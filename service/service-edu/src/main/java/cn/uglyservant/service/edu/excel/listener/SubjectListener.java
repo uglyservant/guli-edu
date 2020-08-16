@@ -4,6 +4,7 @@ import cn.uglyservant.service.edu.excel.entity.Subject;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 /**
  * @author uglys
@@ -11,9 +12,12 @@ import lombok.extern.slf4j.Slf4j;
  * TODO
  */
 @Slf4j
+@Component
 public class SubjectListener extends AnalysisEventListener<Subject> {
+
     @Override
     public void invoke(Subject subject, AnalysisContext analysisContext) {
+
         log.info("课程信息，{}", subject);
     }
 

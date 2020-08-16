@@ -1,8 +1,8 @@
 package cn.uglyservant.service.edu.controller;
 
 import cn.uglyservant.common.global.R;
-import cn.uglyservant.common.service.vo.AdminVo;
-import cn.uglyservant.common.service.vo.SingleMap;
+import cn.uglyservant.common.service.vo.Admin;
+import cn.uglyservant.common.global.V;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,12 +21,12 @@ public class AdminController {
 
     @PostMapping("/login")
     public R login() {
-        return R.ok(new SingleMap("token", "admin"));
+        return R.ok(new V("token", "admin"));
     }
 
     @GetMapping("/info")
     public R info() {
-        return R.ok(new AdminVo(
+        return R.ok(new Admin(
                 "admin",
                 "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
                 Collections.singletonList("admin")));
