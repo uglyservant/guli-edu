@@ -2,8 +2,6 @@ package cn.uglyservant.common.service.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
 
 import java.util.List;
 
@@ -13,15 +11,13 @@ import java.util.List;
  * TODO
  */
 @Getter
-@Setter
-@Accessors(chain = true)
 @AllArgsConstructor
-public class AdminVo {
+public class Admin {
 
-    String name;
+    private final String name;
 
-    String avatar;
+    private final String avatar;
 
-    List<String> roles;
+    private final List<String> roles;
 
 }

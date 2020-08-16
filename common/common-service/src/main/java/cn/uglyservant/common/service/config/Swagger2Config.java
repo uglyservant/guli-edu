@@ -24,6 +24,7 @@ public class Swagger2Config {
 
     @Bean
     public Docket webApiConfig(){
+        //noinspection Guava
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("webApi")
                 .apiInfo(webApiInfo())

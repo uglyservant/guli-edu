@@ -2,8 +2,6 @@ package cn.uglyservant.common.service.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
 
 /**
  * @author uglys
@@ -11,12 +9,10 @@ import lombok.experimental.Accessors;
  * 分页查询讲师结果对象
  */
 @Getter
-@Setter
-@Accessors(chain = true)
 @AllArgsConstructor
-public class PageObject {
+public class Paged {
 
-    private Long total;
+    private final Long total;
 
-    private Object rows;
+    private final Object rows;
 }

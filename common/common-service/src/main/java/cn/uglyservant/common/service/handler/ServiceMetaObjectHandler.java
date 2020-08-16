@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-public class ServiceEduMetaObjectHandler implements MetaObjectHandler {
+public class ServiceMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         this.setFieldValByName("gmtCreate", new Date(), metaObject);
