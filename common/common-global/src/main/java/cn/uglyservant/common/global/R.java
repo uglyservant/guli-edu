@@ -3,38 +3,50 @@ package cn.uglyservant.common.global;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
 
 /**
  * @author uglys
  * Created on 2020/6/13 at 12:15
- * TODO
+ * 统一返回结果
  */
-@ApiModel("统一返回结果")
-@Setter
 @Getter
-@Accessors(chain = true)
+@ApiModel("统一返回结果")
 public class R {
 
     @ApiModelProperty(value = "结果代码")
-    Integer code;
+    private final Integer code;
 
     @ApiModelProperty(value = "结果描述")
-    String message;
+    private final String msg;
 
     @ApiModelProperty(value = "结果数据")
-    Object data;
+    private final Object data;
 
-    private R() {
+    private R(Result result, Object data) {
+        this.code = result.code;
+        this.msg = result.msg;
+        this.data = data;
     }
 
-    public static R ok(Object o) {
-        return new R().setCode(ResultCode.SUCCESS).setMessage(ResultMessage.SUCCESS).setData(o);
+    public static R ok(Object data) {
+        return new R(Result.SUCCESS, data);
     }
 
-    public static R error(Object o) {
-        return new R().setCode(ResultCode.ERROR).setMessage(ResultMessage.ERROR).setData(o);
+    public static R error(Object data) {
+        return new R(Result.ERROR, data);
     }
 
+    private enum Result {
+
+        SUCCESS(20000, "请求成功"),
+        ERROR(50000, "未知错误");
+
+        private final Integer code;
+        private final String msg;
+
+        Result(Integer code, String msg) {
+            this.code = code;
+            this.msg = msg;
+        }
+    }
 }
