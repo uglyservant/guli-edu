@@ -2,7 +2,7 @@ package cn.uglyservant.service.oss.controller;
 
 import cn.uglyservant.common.global.R;
 import cn.uglyservant.common.service.dto.AvatarUpload;
-import cn.uglyservant.common.service.vo.SingleMap;
+import cn.uglyservant.common.global.V;
 import cn.uglyservant.service.oss.service.OssService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,6 +26,6 @@ public class OssController {
     @PostMapping("/uploadAvatar")
     public R uploadAvatar(AvatarUpload avatarUpload) {
         String fileUri = ossService.uploadAvatar(avatarUpload.getAccountId(), avatarUpload.getAvatar());
-        return R.ok(new SingleMap("fileUri", fileUri));
+        return R.ok(new V("fileUri", fileUri));
     }
 }

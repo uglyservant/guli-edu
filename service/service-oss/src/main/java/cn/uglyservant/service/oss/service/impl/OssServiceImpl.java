@@ -43,11 +43,10 @@ public class OssServiceImpl implements OssService {
                     ossProperties.getEndpoint() + "/" +
                     avatarPath;
         } catch (IOException | NullPointerException e) {
-            log.error(e.getLocalizedMessage());
-            throw new GuliException("上传文件异常");
+            throw new GuliException("上传文件异常", e);
         } finally {
             ossClient.shutdown();
-            log.info("Oss client shutdown in expected");
+            log.info("Oss client shutdown with code 0");
         }
     }
 }
