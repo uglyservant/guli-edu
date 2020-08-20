@@ -2,6 +2,7 @@ package cn.uglyservant.service.edu.mapper;
 
 import cn.uglyservant.service.edu.entity.Subject;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author uglyservant
  * @since 2020-07-18
  */
+@Repository
 public interface SubjectMapper extends BaseMapper<Subject> {
 
 }

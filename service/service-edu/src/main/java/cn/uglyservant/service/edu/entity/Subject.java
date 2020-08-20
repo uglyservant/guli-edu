@@ -1,11 +1,8 @@
 package cn.uglyservant.service.edu.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
 
 import java.util.Date;
-
-import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
 
@@ -44,10 +41,12 @@ public class Subject implements Serializable {
     @ApiModelProperty(value = "排序字段")
     private Integer sort;
 
-    @ApiModelProperty(value = "创建时间")
+    @TableField(fill = FieldFill.INSERT)
+    @ApiModelProperty(value = "创建时间", example = "2020-06-18", hidden = true)
     private Date gmtCreate;
 
-    @ApiModelProperty(value = "更新时间")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty(value = "更新时间", example = "2020-06-18", hidden = true)
     private Date gmtModified;
 
 

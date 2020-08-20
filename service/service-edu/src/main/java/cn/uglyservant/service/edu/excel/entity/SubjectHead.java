@@ -13,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Subject {
+public class SubjectHead {
 
     @ExcelProperty(index = 0)
     private String firstLevel;

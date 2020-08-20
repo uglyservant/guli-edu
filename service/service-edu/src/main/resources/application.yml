@@ -32,3 +32,10 @@ logging:
 #    root: info
   file:
     path: ./log/service-edu
+thread:
+  pool:
+    core-pool-size: 6
+    max-pool-size: 12
+    keep-alive-seconds: 0
+    queue-capacity: 12
+    thread-name-format: edu-async-%02d

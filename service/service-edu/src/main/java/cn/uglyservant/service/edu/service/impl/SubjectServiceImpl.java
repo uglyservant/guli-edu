@@ -2,6 +2,7 @@ package cn.uglyservant.service.edu.service.impl;
 
 import cn.uglyservant.common.global.exception.GuliException;
 import cn.uglyservant.service.edu.entity.Subject;
+import cn.uglyservant.service.edu.excel.entity.SubjectHead;
 import cn.uglyservant.service.edu.excel.listener.SubjectListener;
 import cn.uglyservant.service.edu.mapper.SubjectMapper;
 import cn.uglyservant.service.edu.service.SubjectService;
@@ -32,7 +33,7 @@ public class SubjectServiceImpl extends ServiceImpl<SubjectMapper, Subject> impl
         try {
             EasyExcel.read(
                     subjects.getInputStream(),
-                    cn.uglyservant.service.edu.excel.entity.Subject.class,
+                    SubjectHead.class,
                     subjectListener
             ).sheet().doRead();
         } catch (IOException e) {

@@ -9,10 +9,3 @@ spring:
 logging:
   file:
     path: ./log/service-oss
-
-aliyun:
-  oss:
-    endpoint: oss-cn-shanghai.aliyuncs.com
-    bucket-name: guli-edu-uglyservant
-    key-id: LTAI4GHacLZoPhUErAWMZ7cX
-    key-secret: rApbHjy4jSMY6nd5XEKZN5ydX7KswV
