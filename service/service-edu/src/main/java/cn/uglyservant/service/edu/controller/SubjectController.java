@@ -5,6 +5,7 @@ import cn.uglyservant.common.global.R;
 import cn.uglyservant.common.global.exception.GuliException;
 import cn.uglyservant.service.edu.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,6 +22,7 @@ import java.io.IOException;
  * @author uglyservant
  * @since 2020-07-18
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/edu/subject")
 public class SubjectController {

@@ -1,17 +1,14 @@
 package cn.uglyservant.common.service.config;
 
-import cn.uglyservant.common.service.properties.ServiceProperties;
+import cn.uglyservant.common.service.properties.ThreadPoolProperties;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.AsyncConfigurer;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import java.lang.reflect.Method;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -28,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class ThreadPoolConfig implements AsyncConfigurer {
 
     @Autowired
-    ServiceProperties serviceProperties;
+    ThreadPoolProperties threadPoolProperties;
 
     /**
      * @return 自定义线程池
@@ -36,12 +33,12 @@ public class ThreadPoolConfig implements AsyncConfigurer {
     @Override
     public Executor getAsyncExecutor() {
         return new ThreadPoolExecutor(
-                serviceProperties.getCorePoolSize(),
-                serviceProperties.getMaxPoolSize(),
-                serviceProperties.getKeepAliveSeconds(),
+                threadPoolProperties.getCorePoolSize(),
+                threadPoolProperties.getMaxPoolSize(),
+                threadPoolProperties.getKeepAliveSeconds(),
                 TimeUnit.SECONDS,
-                new LinkedBlockingDeque<>(serviceProperties.getQueueCapacity()),
-                new ThreadFactoryBuilder().setNameFormat(serviceProperties.getThreadNameFormat()).build()
+                new LinkedBlockingDeque<>(threadPoolProperties.getQueueCapacity()),
+                new ThreadFactoryBuilder().setNameFormat(threadPoolProperties.getThreadNameFormat()).build()
         );
     }
 

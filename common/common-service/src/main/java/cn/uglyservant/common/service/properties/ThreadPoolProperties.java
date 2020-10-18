@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 /**
  * @author uglys
  * @since 0:26 2020/8/20
- * TODO
+ * 线程池配置类
  */
 @Getter
 @Setter
 @Component
 @ConfigurationProperties(prefix = "thread.pool")
-public class ServiceProperties {
+public class ThreadPoolProperties {
 
     /**
      * 核心线程数
@@ -37,7 +37,7 @@ public class ServiceProperties {
     private int queueCapacity;
 
     /**
-     * 线程名称前缀
+     * 线程名称格式
      */
     private String threadNameFormat;
 }

@@ -6,6 +6,17 @@ spring:
     name: service-oss
   profiles:
     active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
 logging:
   file:
     path: ./log/service-oss
+
+aliyun:
+  oss:
+    endpoint: oss-cn-shanghai.aliyuncs.com
+    bucket-name: guli-edu-uglyservant
+    key-id: LTAI4G3FvURBDnmHqXdyBhBx
+    key-secret: JzfnhP4Jl03YOI8oSlGaYudOYdboZ6

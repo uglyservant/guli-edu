@@ -1,7 +1,7 @@
 package cn.uglyservant.service.oss.service.impl;
 
 import cn.uglyservant.common.global.exception.GuliException;
-import cn.uglyservant.service.oss.properties.OssProperties;
+import cn.uglyservant.common.service.properties.OssProperties;
 import cn.uglyservant.service.oss.service.OssService;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
