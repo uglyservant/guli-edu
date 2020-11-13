@@ -26,6 +26,6 @@ public class OssController {
     @PostMapping("/uploadAvatar")
     public R uploadAvatar(AvatarUpload avatarUpload) {
         String fileUri = ossService.uploadAvatar(avatarUpload.getAccountId(), avatarUpload.getAvatar());
-        return R.ok(new V("fileUri", fileUri));
+        return R.success(new V("fileUri", fileUri));
     }
 }

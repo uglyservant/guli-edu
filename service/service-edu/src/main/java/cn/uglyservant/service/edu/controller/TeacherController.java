@@ -56,13 +56,13 @@ public class TeacherController {
         // queryWrapper.orderByAsc("sort").orderByAsc("level");
         Page<Teacher> teacherPage = teacherService.page(new Page<>(page, size), queryWrapper);
 
-        return R.ok(new Paged(teacherPage.getTotal(), teacherPage.getRecords()));
+        return R.success(new Paged(teacherPage.getTotal(), teacherPage.getRecords()));
     }
 
     @ApiOperation("查询一个讲师")
     @GetMapping("/find-by-id/{id}")
     public R findById(@PathVariable String id) {
-        return R.ok(new V("teacher", teacherService.getById(id)));
+        return R.success(new V("teacher", teacherService.getById(id)));
     }
 
     @ApiOperation("删除一个讲师")
@@ -72,7 +72,7 @@ public class TeacherController {
             throw new GuliException("删除讲师失败，讲师ID：" + id);
         }
 
-        return R.ok(null);
+        return R.success(null);
     }
 
     @ApiOperation("添加一个讲师")
@@ -82,7 +82,7 @@ public class TeacherController {
             throw new GuliException("添加讲师失败，讲师ID：" + teacher.getId());
         }
 
-        return R.ok(null);
+        return R.success(null);
     }
 
     @ApiOperation("更新一个讲师")
@@ -92,6 +92,6 @@ public class TeacherController {
             throw new GuliException("更新讲师失败，讲师ID" + teacher.getId());
         }
 
-        return R.ok(null);
+        return R.success(null);
     }
 }

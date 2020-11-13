@@ -26,6 +26,6 @@ public class AsyncTaskController {
     @GetMapping("/test")
     public R test() {
         asyncTaskService.testAsync();
-        return R.ok(null);
+        return R.success(null);
     }
 }

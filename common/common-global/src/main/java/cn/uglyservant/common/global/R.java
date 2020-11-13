@@ -28,7 +28,7 @@ public class R {
         this.data = data;
     }
 
-    public static R ok(Object data) {
+    public static R success(Object data) {
         return new R(Result.SUCCESS, data);
     }
 
@@ -39,7 +39,7 @@ public class R {
     private enum Result {
 
         SUCCESS(20000, "请求成功"),
-        ERROR(50000, "未知错误");
+        ERROR(50000, "内部错误");
 
         private final Integer code;
         private final String msg;

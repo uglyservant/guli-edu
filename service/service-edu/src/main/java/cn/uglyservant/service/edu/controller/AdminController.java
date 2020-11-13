@@ -21,12 +21,12 @@ public class AdminController {
 
     @PostMapping("/login")
     public R login() {
-        return R.ok(new V("token", "admin"));
+        return R.success(new V("token", "admin"));
     }
 
     @GetMapping("/info")
     public R info() {
-        return R.ok(new Admin(
+        return R.success(new Admin(
                 "admin",
                 "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif",
                 Collections.singletonList("admin")));
