@@ -14,4 +14,9 @@ logging:
   file:
     path: ./log/service-oss
 
-
+aliyun:
+  oss:
+    endpoint: jfkdjk
+    bucket-name: kfjdkfj
+    key-id: fdkfjkd
+    key-secret: fjdfjdk
