@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Getter
 @AllArgsConstructor
-public class Admin {
+public class AdminInfo {
 
     private final String name;
 

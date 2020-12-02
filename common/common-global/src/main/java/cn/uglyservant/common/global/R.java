@@ -39,7 +39,7 @@ public class R {
     private enum Result {
 
         SUCCESS(20000, "请求成功"),
-        ERROR(50000, "内部错误");
+        ERROR(50000, "请求失败");
 
         private final Integer code;
         private final String msg;

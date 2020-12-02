@@ -10,9 +10,9 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public class Paged {
+public class PagedObj {
 
     private final Long total;
 
-    private final Object rows;
+    private final Object records;
 }

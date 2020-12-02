@@ -1,6 +1,8 @@
 # 服务端口
 server:
   port: 8001
+  servlet:
+    context-path: /edu
 
 spring:
   # 服务名

@@ -7,6 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
  * @since 21:41 2020/7/6
  * TODO
  */
-public interface OssService {
+public interface UploadService {
     String uploadAvatar(String accountId, MultipartFile avatar);
 }

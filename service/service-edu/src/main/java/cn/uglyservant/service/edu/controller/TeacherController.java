@@ -1,12 +1,11 @@
 package cn.uglyservant.service.edu.controller;
 
 
-
 import cn.uglyservant.common.global.R;
+import cn.uglyservant.common.global.V;
 import cn.uglyservant.common.global.exception.GuliException;
 import cn.uglyservant.common.service.dto.TeacherQuery;
-import cn.uglyservant.common.service.vo.Paged;
-import cn.uglyservant.common.global.V;
+import cn.uglyservant.common.service.vo.PagedObj;
 import cn.uglyservant.service.edu.entity.Teacher;
 import cn.uglyservant.service.edu.service.TeacherService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -28,12 +27,11 @@ import org.springframework.web.bind.annotation.*;
 @Api(tags = "讲师管理")
 @CrossOrigin
 @RestController
-@RequestMapping("/edu/teacher")
+@RequestMapping("/teacher")
 public class TeacherController {
 
     @Autowired
     private TeacherService teacherService;
-
 
     @ApiOperation("查询所有讲师(带条件分页)")
     @PostMapping("/conditional-page-list/{page}/{size}")
@@ -56,7 +54,7 @@ public class TeacherController {
         // queryWrapper.orderByAsc("sort").orderByAsc("level");
         Page<Teacher> teacherPage = teacherService.page(new Page<>(page, size), queryWrapper);
 
-        return R.success(new Paged(teacherPage.getTotal(), teacherPage.getRecords()));
+        return R.success(new PagedObj(teacherPage.getTotal(), teacherPage.getRecords()));
     }
 
     @ApiOperation("查询一个讲师")

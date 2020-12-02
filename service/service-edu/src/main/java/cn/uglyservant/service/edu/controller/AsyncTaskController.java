@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "异步任务")
 @CrossOrigin
 @RestController
-@RequestMapping("/edu/async-task")
+@RequestMapping("/async-task")
 public class AsyncTaskController {
 
     @Autowired

@@ -2,7 +2,7 @@ package cn.uglyservant.service.oss.service.impl;
 
 import cn.uglyservant.common.global.exception.GuliException;
 import cn.uglyservant.common.service.properties.OssProperties;
-import cn.uglyservant.service.oss.service.OssService;
+import cn.uglyservant.service.oss.service.UploadService;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +20,7 @@ import java.util.Objects;
  */
 @Slf4j
 @Service
-public class OssServiceImpl implements OssService {
+public class UploadServiceImpl implements UploadService {
 
     @Autowired
     OssProperties ossProperties;
@@ -43,7 +43,7 @@ public class OssServiceImpl implements OssService {
                     ossProperties.getEndpoint() + "/" +
                     avatarPath;
         } catch (IOException | NullPointerException e) {
-            throw new GuliException("上传文件异常", e);
+            throw new GuliException("上传头像异常", e);
         } finally {
             ossClient.shutdown();
             log.info("Oss client shutdown with code 0");
